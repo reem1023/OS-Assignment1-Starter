@@ -4,7 +4,6 @@
 Answer all 4 questions with detailed explanations. Each answer should be **3-5 sentences minimum** and demonstrate your understanding of the concepts.
 
 ---
-My answer is 
 
 ## Question 1: Thread vs Process
 
