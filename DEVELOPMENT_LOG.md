@@ -112,10 +112,13 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Summary
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: 6 hours
 
-**Most challenging part**: 
+**Most challenging part**:
+Understanding thread scheduling and waiting time calculation.
 
-**Most interesting learning**: 
+**Most interesting learning**:
+Learning how threads run concurrently and how the scheduler manages them.
 
-**What I would do differently next time**: 
+**What I would do differently next time**:
+Start earlier, practice more examples, and review concepts before coding.
