@@ -11,7 +11,7 @@ Answer all 4 questions with detailed explanations. Each answer should be **3-5 s
 
 **Your Answer:**
 
-[Write your answer here. Consider: What is a process? What is a thread? How do they differ in terms of memory, resources, creation overhead? Why are threads more suitable for this simulation?]
+[A process is an independent program with its own memory space, while a thread is a smaller unit of execution within a process that shares the same memory. Threads are lighter and faster to create compared to processes. In this assignment, we used threads because they allow multiple tasks to run concurrently within the same program. This improves performance and resource usage. Using processes would be more complex and slower due to separate memory spaces.]
 
 ---
 
@@ -21,15 +21,15 @@ Answer all 4 questions with detailed explanations. Each answer should be **3-5 s
 
 **Your Answer:**
 
-[Write your answer here. Describe the specific behavior - where does the process go? When does it run again? Give an example from your actual program output showing a process that was re-queued.]
+In Round-Robin scheduling, if a process does not finish within its time quantum, it is placed back at the end of the ready queue. This means it will wait for its next turn while other processes get CPU time. For example, if process P1 has a burst time longer than the time quantum, it will run for a limited time and then be paused. After that, it is re-queued and will continue execution later. This ensures fairness among all processes.
 
 Example from my output:
-```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
-```
+P1 is running for 2 units
+P1 did not finish and is moved to the end of the queue
 
-**Explanation of example:**
-[Explain what's happening in the output snippet you pasted]
+Explanation of example:
+In this example, P1 used its allocated time quantum but did not complete its execution. Therefore, it was returned to the ready queue. Later, it will be scheduled again and continue from where it left off. This behavior ensures that no single process monopolizes the CPU.
+```
 
 ---
 
@@ -39,17 +39,17 @@ Example from my output:
 
 **Your Answer:**
 
-[Write your answer here. For each state, explain when P1 enters that state during the simulation. Use your understanding of the code to trace through the lifecycle.]
+[]
 
-1. **New**: [When is P1 in New state?]
+1. **New**: [When is P1 in New state?P1 is in the New state when it is first created but has not started execution yet.]
 
-2. **Runnable**: [When does P1 become Runnable?]
+2. **Runnable**: [When does P1 become Runnable?P1 becomes Runnable when it is added to the ready queue and is waiting for CPU time.]
 
-3. **Running**: [When is P1 Running?]
+3. **Running**: [When is P1 Running?P1 is in the Running state when the scheduler selects it and assigns CPU time to execute.]
 
-4. **Waiting**: [When/why would P1 be Waiting?]
+4. **Waiting**: [When/why would P1 be Waiting?P1 may enter the Waiting state if it is paused or waiting for its next turn after its time quantum expires.]
 
-5. **Terminated**: [When is P1 Terminated?]
+5. **Terminated**: [When is P1 Terminated?P1 reaches the Terminated state when it finishes execution completely and no longer needs CPU time.]
 
 ---
 
@@ -59,21 +59,21 @@ Example from my output:
 
 **Your Answer:**
 
-### Example 1: [Name of application/scenario]
+### Example 1: [Web Server]
 
 **Description**: 
-[Describe the real-world scenario or application]
+[A web server handles multiple client requests at the same time. Each request can be processed as a separate thread.]
 
 **Why Round-Robin works well here**: 
-[Explain why Round-Robin scheduling is suitable. Consider fairness, responsiveness, predictability, etc.]
+[Round-Robin ensures that each client request gets a fair share of CPU time. It prevents any single request from blocking others. This improves responsiveness and user experience.]
 
-### Example 2: [Name of application/scenario]
+### Example 2: [Mobile Applications]
 
 **Description**: 
-[Describe the real-world scenario or application]
+[Mobile apps often run background tasks such as downloading data while keeping the interface responsive.]
 
 **Why Round-Robin works well here**: 
-[Explain why Round-Robin scheduling is suitable. Consider fairness, responsiveness, predictability, etc.]
+[Round-Robin allows background tasks and user interface tasks to share CPU time fairly. This keeps the app responsive and prevents freezing. It ensures smooth performance for the user.]
 
 ---
 
